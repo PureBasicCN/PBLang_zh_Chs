@@ -1,13 +1,13 @@
 ;
-; PureBasic调试器 - 库简简体中文文件
+; PureBasic Debugger - Libraries language file
 ;
 
 [LanguageInfo]
 Application = PB_Libraries
 Language    = 简体中文
-LastUpdated = 9/11/2014
-Creator     = 小半头砖 麦壳饼
-Email       = WaitForDawn@qq.com 100860505@qq.com
+LastUpdated = 09/04/2015
+Creator     = 小半头砖  迷路仟   漂流瓶儿 麦壳饼
+Email       = root@purebasic.cn
 
 
 [Common]
@@ -27,6 +27,7 @@ NullArgument    = 指定的'%s'为空.
 InvalidArgument = 指定的'%s'无效.
 NullLength      = 指定的长度为0.
 NegativeLength  = 指定的长度为负数.
+NegativeSize      = 指定的大小是负数.
 InvalidLength   = 指定的长度无效.
 Negative        = 指定的'%s'为负数.
 NullNegative    = 指定的'%s'小于等于0.
@@ -37,6 +38,7 @@ NoLabel         = 提定的'%s'不是一个标记指针.
 NoProcedure     = 指定的'%s'不是一个过程指针.
 WrongType       = '%s'中指定的过程没有返回参数或返回类型.
 AmbiguousElements = 结构 '%s'包含歧义成员'%s'和 '%s'.
+InvalidValue      = %s(): 无效值指定给了参数 '%s'.
 
 [2DDrawing]
 PlotOutside     = Plot()超出绘图区域.
@@ -55,6 +57,11 @@ OutOfRange = 指定的音频CD单位超出范围
 [Camera]
 InvalidCameraWidth  = 无效摄像头宽度(有效范围0至100).
 InvalidCameraHeight = 无效摄像头高度 (有效范围0至100).
+
+[CGI]
+InvalidIndex     = 无效的'Index' 值.
+InvalidLocalPort = 'LocalPort' 不是有效的端口数值.
+
 [Cipher]
 SmallOutput       = OutputLength至少要比InputLength大33%.
 WrongKeySize      = AES的密钥大小为128、192或256.
@@ -91,7 +98,8 @@ CallBeforeSprites = InitSprite()之前必先调用InitEngine3D().
 NegativeScale = 刻度值不能为负数.
 
 [Event]
-NeedOneWindow = 至少有一个窗口应该打开才能使用这个命令。
+WindowAll = 在引用#PB_All 至 'Window', 'Object' 和 'EventType' 时最好设置为 #PB_All
+ObjectAll = 在引用#PB_All 至'Object', 'EventType' 时最好设置为  #PB_All.
 
 [File]
 NegativeSeek       = 无法寻求一个负数位置.
@@ -100,7 +108,7 @@ NegativeBufferSize = 缓冲区大小不能为负.
 
 [Gadget]
 NeedOpenGadgetList = AddGadgetItem()之前必先调用OpenGadgetList().
-NoOpenGadgetList   = CloseGadgetList()必须在调用OpenGadgetList(), PanelGadget(), ScrollAreaGadget() or ContainerGadget()后再调用.
+NoOpenGadgetList   = CloseGadgetList()必须在调用OpenGadgetList(), PanelGadget(), ScrollAreaGadget() 或 ContainerGadget()后再调用.
 NoGadgetList       = 没有当前GadgetList.
 NotDifferent       = #Gadget1与#Gadget2必须不同.
 SplitterChilds     = 无法以它的子类之一的相同编号创建SplitterGadget.
@@ -135,14 +143,10 @@ ExpectTypeBoolean = 需要布尔型的JSON值.
 ExpectTypeArray   = 需要数组类型的JSON值.
 ExpectTypeObject  = 需要一个对象类型的JSON值.
 InvalidIndex      = 数组超出边界.
-UnknownFlags      = 未知标识值.
 NoExamine         = 当前没有检查该对象的成员。
 
 [Library]
 WrongIndex = 此索引值 GetFunctionEntry() 从1开始.
-
-[Light]
-InvalidColorType = 无效颜色类型参数.
 
 [LinkedList]
 NotInitialized  = 链表未初始化.
@@ -161,9 +165,6 @@ NoCurrent       = 映射中无元素.
 PushedElement   = 无法删除一个推送元素.
 NoPushedElement = 没用已存储的元素可恢复.
 
-[Material]
-InvalidColorType = 无效颜色类型参数.
-
 [Math]
 MinNegative    = 最小值不能是负数.
 MaxNegative    = 最大值不能是负数.
@@ -176,7 +177,7 @@ NegativeAlloc = 无法分配负数大小的内存块.
 NullSource    = 源内存指针为0.
 NullDest      = 目标内存指针为0.
 WrongLength   = 指定长度小于-1.
-InvalidType   = FillMemory()类型无效,必须是#PB_Byte,#PB_Word或#PB_Long中的一个.
+WrongSize     = Specified size is < -1.
 
 [Menu]
 NoCurrent = 当前菜单不存在
@@ -184,13 +185,15 @@ NoCurrent = 当前菜单不存在
 [Mesh]
 Add3DArchiveBeforeLoadMesh = Add3DArchive在LoadMesh()至少要先调用一次.
 
-[Module]
+[Music]
 InvalidVolume = 容量(卷)必须在0和100之间.
 
 [Network]
 NegativeTimeOut     = OpenNetworkConnection()超时时间不能为负数.
 IPv6FieldOutOfRange = IPAddressField() 字段针对IPv6地址索引在0和7之间。
 IPv4FieldOutOfRange = IPAddressField() 字段针对IPv4地址索引在0和3之间.
+InvalidLocalPort    = 'LocalPort' 是一个无效的端口号.
+
 [Node]
 ObjectNotAttached = 指定对象未连接节点.
 NegativeScale     = 缩放值不能负数
@@ -244,7 +247,6 @@ NoStartDrawing   = 此函数无法在StartDrawing()/StopDrawing()中调用.
 NoCurrent     = 当前没有状态栏.
 TooManyFields = 字段数不允许超过64个.
 WidthHigh     = 宽度不能大于8192.
-Appearance    = 外观值必须介于0和16之间.
 
 [String]
 IncorrectTrimCharacterLength  = Trim()的'Character$'参数长度至少为1.
@@ -267,6 +269,14 @@ InvalidThread    = 指定线程不存在.
 InvalidMutex     = 指定的互斥不存在.
 InvalidSemaphore = 指定的信号量不存在.
 
+[VectorDrawing]
+NoSavedState     = There is no saved drawing state to restore.
+NoLayer          = There is no drawing layer to end.
+OpenLayer        = There is still an unfinished drawing layer on this output.
+SinglePage       = The current output is not a multi-page drawing output.
+FixedCoordinate  = The specified coordinate system is not modifiable.
+InvalidDashArray = The specified array is not a one-dimensional array with double values.
+
 [Window]
 NeedOneWindow = 至少有一个窗口应该打开来使用此命令.
 InvalidParent = 父窗口ID是一个无效的WindowID().
@@ -279,9 +289,7 @@ BeforeAnyWindow = SetGUITheme3D() 必须要在任何其他 Window3D 命令之前调用。
 
 [Xml]
 NullNode             = 无效的XML节点.(0)
-UnknownEncoding      = 未知编码类型.
-StandaloneModes      = 只允许#PB_XML_StandaloneYes, #PB_XML_StandaloneNo 或 #PB_XML_StandaloneUnset.
-InvalidIndex         = 索引值必须大于0.
+InvalidIndex         = 索引必须 >= 1.
 NoNameNode           = 此类型的XML节点无名称.
 InvalidNodeName      = 无效的节点名.
 InvalidAttributeName = 无效的属性名.
@@ -290,9 +298,9 @@ NoChildren           = 注释/CData/DTD不能有子节点.
 PreviousWrongTree    = 给定的前一个节点在XML节点树中不是一个父节点.
 PreviousDirectChild  = 给定的前一个节点不是父节点的一个直接子节点.
 CannotCreateRoot     = 根节点不能手动创建.
-InvalidType          = 无效的节点类型.
 CannotMoveRoot       = 根节点不能被复制或移动.
 CannotDeleteRoot     = 一个XML的根节点不能被删除.
 CannotMove1          = 节点不能被移动成为其子节点.(父节点是一个直接或间接的子节点)
 CannotMove2          = 移动的节点与前一个节点是同一个.
 CannotMove3          = 节点不能被移动成为其子节点.(节点与父节点一样)
+
