@@ -1,0 +1,143 @@
+;
+; PureBasic调试器 简体中文语言文件
+;
+
+[LanguageInfo]
+Application = PB_Debugger
+Language    = 简体中文
+LastUpdated = 9/11/2014
+Creator     = 小半头砖 麦壳饼
+Email       = WaitForDawn@qq.com 100860505@qq.com
+
+
+[Debugger]
+OutOfMemory      = 调试器的内存不足.
+StackUnavailable = 堆栈信息无法显示.
+StackLow         = 错误:堆栈位置比程序启动时低.
+StackEmpty       = 堆栈为空.
+StackAlign       = 警告:堆栈未按系统要求对齐.
+StackLimit       = 警告:堆栈位置超出系统限制(堆栈溢出).
+StackAlignBytes  = 字节未与寄存器的大小边界对齐:
+TargetNotFound   = 无法定位目标变量.
+AssignStructure  = 不能给一个结构体赋值.
+AssignValue      = 缺少将赋予的值.
+NumericString    = 不能将一个数值写入字串变量.
+StringNumeric    = 不能将一个字串写入数值变量.
+Win9xDrawing     = 在Windows 95/98/ME的StartDrawing(Sprite/ScreenOutput())中无法中止调试器运行.
+Warning          = 警告
+
+[External]
+InvalidStart         = 起始地址需要一个整数表达式.
+InvalidEnd           = 结束地址/长度 需要一个整数表达式.
+ArrayListNotFound    = 数组、链表或映射未找到.
+WatchlistBig         = 监视列表太庞大了(只允许1000个),请移除部分变量.
+NoStructure          = 无效的"\".变量并非结构体.
+NoStructureFields    = 无法访问监视列表中指针的结构体字段.
+InvalidField         = 无效的结构字段名.
+LiteralOnly          = 仅允许常量表达式作为数组的索引.
+IntegerOnly          = 仅允许整数数组索引.
+MissingBracket       = 未找到结构体数组中对应的']'.
+StructureArrayBounds = 结构体数组索引超出范围.
+VariableNotFound     = 未找到变量.
+InvalidCharacter     = 数组/链表/映射后出现无效字符.
+InvalidListName      = 无效链表名.
+InvalidName          = 无效变量名.
+NoStructureDisplay   = 无法完整显示监视列表中的结构体.
+NoDynamicDisplay     = 无法显示监视列表中结构体内的数组、列表或映射.
+ModuleNotFound       = 模块未找到.
+
+[DebuggerErrors]
+1  = 禁止除数为0.
+2  = 禁止求模除数为0(mod后面的数为0).
+3  = 指针为空.
+4  = 数组索引越界.
+5  = 列表中没有一个当前元素.
+6  = 结构体数组索引越界.
+7  = 数组中元素个数不能为负.
+8  = ReDim只能改变数组中最后一维的大小.
+9  = 读取数据错误:没有更多的数据.
+10 = NewMap中'HashSize'参数必须大小0.
+11 = 该映射无当前元素.
+12 = 该映射未初始化.
+
+[SystemErrors]
+InvalidMemory      = 无效的内存访问.
+InvalidMemoryRead  = 无效的内存访问.(读取出错于:%s)
+InvalidMemoryWrite = 无效的内存访问.(写入出错于:%s)
+PageError          = 内存分页错误.
+StackOverflow      = 堆栈溢出.
+IllegalInstruction = 非法指令.(执行二进制数据?)
+DivisionByZero     = 除数为零.
+FloatInvalid       = 无效的浮点运算.
+FloatOverflow      = 浮点溢出.
+FloatUnderflow     = 浮点下溢.
+IntegerOverflow    = 整数溢出.
+ArithmeticError    = 致命的算术错误.
+BadCall            = 错误的系统调用.
+ProgramAbort       = 程序中止.(由外部库)
+
+[Parser]
+NoMemory             = 语法分析器内存不足.
+TokenBinary          = 二进制值格式错误.
+TokenString          = 字符串文字未结束
+TokenCharacter       = 字符常量未结束
+Token$               = 意外的标记:'$'
+TokenHex             = 十六进制值格式错误.
+TokenDecimal         = 十进制值格式错误.
+InvalidInput         = 输入的字符不支持: '%c'
+ArgumentExpected     = 该运算符有另一层与之相冲突的意思.
+NumericString        = 无法将一个字符串与数值相结合.
+InvalidStringOp      = 字符串只能使用'+'运算符.
+FloatBinary          = 浮点数不能使用二进制运算符.
+NoStringOp           = 字串不能使用此运算符.
+NoFloatOp            = 浮点数不能使用二进制运算符.
+UnmatchedLParen      = '('不匹配.
+UnmatchedLBracket    = '['不匹配.
+IdentifierExpected   = 需要一个标示符.
+IdentifierExpected@  = '@'后需要一个标识符.
+IdentifierExpected?  = '?'后需要一个标识符.
+ConstantExpected     = '#'后需要一个常数名.
+UnexpectedToken      = 未预料的标识.
+FieldExpected        = 需要结构体字段名称.
+IntegerIndex         = 数组索引必须是一个整型表达式.
+OutOfBounds          = 数组索引越界.
+NoArray              = 该结构体字段无数组.
+FieldNotFound        = 未找到结构体字段:
+InvalidString        = 无效的字串指针.
+NullStructure        = 结构体指针为空.
+InvalidStructure     = 结构体指针指向无效的内存.
+VariableNotFound     = 未找到变量:
+UnexpectedCall       = 未指定库函数调用.
+NoAddress            = 未能得到库函数地址.
+ArrayInit            = 数组未初始化. (您必须使用Dim)
+MapInit              = 映射未初始化. (您必须使用NewMap)
+MapStringKey         = 映射密钥必须是一个字串表达式.
+MissingArrayParen    = 数组维数后面缺失')'.
+NoDimensions         = 数组的维数至少为1.
+TooFewDimensions     = 数组维数太小.
+TooManyDimensions    = 数组维数太多.
+MissingListParen     = 链表名后缺失')'.
+MissingMapParen      = 映射名后缺失')'.
+NoCurrentElement     = 链表没有当前元素.
+MapNoCurrentElement  = 映射没有当前元素.
+ArrayListNotFound    = 未找到数组() /链表() /映射():
+MissingOpenParen     = 数组/链表/映射后需要有'('.
+NoStructure          = 变量没有结构体.
+Garbage              = 输入信息的结尾有无效内容.
+MissingFunctionParen = 函数参数结尾缺少')'.
+TooFewArguments      = 函数参数太少.
+TooManyArguments     = 函数参数太多.
+StringExpected       = 参数类型错误:需要一个字串.
+NumberExpected       = 参数类型错误:需要一个数值.
+InvalidMemory        = %s指向无效内存.
+InvalidStringMemory  = %s批向无效字串内存.
+NoReplaceMode        = 此处不支持替换(模式2).
+LabelNotFound        = 标记未找到:
+ConstantNotFound     = 常量未找到:
+BooleanContext       = 上下文中不支持布尔值表达式.
+NoLiteralString      = 不允许使用一个文本字符串作为表达式.
+NoArrayListMap       = 输入没有指定一个数组/链表/映射.
+NoObject             = 未初始化指定的对象.
+InvalidModuleUse     = 该模块的操作使用无效。
+ModuleNotFound       = 模块未找到:
+
