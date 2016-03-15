@@ -5,7 +5,7 @@
 [LanguageInfo]
 Application = PB_Libraries
 Language    = 简体中文
-LastUpdated = 09/04/2015
+LastUpdated = 15/03/2016
 Creator     = 小半头砖  迷路仟   漂流瓶儿 麦壳饼
 Email       = root@purebasic.cn
 
@@ -66,7 +66,9 @@ InvalidLocalPort = 'LocalPort' 不是有效的端口数值.
 SmallOutput       = OutputLength至少要比InputLength大33%.
 WrongKeySize      = AES的密钥大小为128、192或256.
 NullKeyBuffer     = 密钥缓冲区为空.
+NullInitializationVector = 当使用#PB_Cipher_CBC 时 *InitializationVector 不能为空。 
 MinimalBufferSize = AES的最小缓冲区大小为16字节.
+PluginMissing            = 指定的加密插件丢失.
 
 [Console]
 NoConsole   = 当前未打开控制台，必须首先调用OpenConsole().
@@ -177,7 +179,7 @@ NegativeAlloc = 无法分配负数大小的内存块.
 NullSource    = 源内存指针为0.
 NullDest      = 目标内存指针为0.
 WrongLength   = 指定长度小于-1.
-WrongSize     = Specified size is < -1.
+WrongSize     = 指定大小小于-1.
 
 [Menu]
 NoCurrent = 当前菜单不存在
@@ -204,7 +206,7 @@ LinesDisabled   = 未启用OnError支持.
 NoHandler       = 该功能只能在错误处理的内部调用.
 
 [Packer]
-NoPack = 当前无已打开的包.
+NoPack = 当前没有打开任何压缩包.
 
 [Preference]
 InvalidKeyword             = Read/WritePreference()函数的keyword$无效.
@@ -229,14 +231,19 @@ NoGroups        = 此正则表达式中没有分组.
 GroupNotFound   = 指定的命名组不存在.
 
 [Screen]
-NoScreen   = 无打开的屏幕.
-WrongDepth = 屏幕深度必须为4, 8, 16, 24 或 32.
+NoScreen   = 没有打开的屏幕.
+WrongDepth = 屏幕颜色深度必须为4, 8, 16, 24 或 32.
 WrongGamma = 一个伽玛值必须介于0和255之间.
 
 [Sort]
 MultiDimensionedArrayNotSupported = Multi-dimensioned array is not support by SortArray().
 NotSimpleList                     = SortList() 无法用于结构化列表列表.
 NotStructuredList                 = SortStructuredList() 无法用于未结构化列表.
+
+[SpecialEffect]
+InvalidNbChains   = NbChains 需要大于零.
+InvalidNbElements = NbElements 需要大于零.
+InvalidLength     = 长度需要大于零.
 
 [Sprite]
 EqualID                 = Sprite1与Sprite2的ID相同.
@@ -270,12 +277,12 @@ InvalidMutex     = 指定的互斥不存在.
 InvalidSemaphore = 指定的信号量不存在.
 
 [VectorDrawing]
-NoSavedState     = There is no saved drawing state to restore.
-NoLayer          = There is no drawing layer to end.
-OpenLayer        = There is still an unfinished drawing layer on this output.
-SinglePage       = The current output is not a multi-page drawing output.
-FixedCoordinate  = The specified coordinate system is not modifiable.
-InvalidDashArray = The specified array is not a one-dimensional array with double values.
+NoSavedState     =  没有可以恢复的绘图状态.
+NoLayer          =  没有用来结束的绘图层.
+OpenLayer        = 当前输出中有一个未完成的绘图层.
+SinglePage       = 当前输出不是多页绘图输出.
+FixedCoordinate  = 指定的坐标系统不能修改.
+InvalidDashArray = 指定的数组不是具有双值的一维数组.
 
 [Window]
 NeedOneWindow = 至少有一个窗口应该打开来使用此命令.
@@ -283,6 +290,7 @@ InvalidParent = 父窗口ID是一个无效的WindowID().
 InvalidEvent  = AddKeyboardShortcut()的事件值必须介于0和64000之间.
 OpenWindowMainThread  = OpenWindow() 只能在主线程中调用.
 WindowEventMainThread = WindowEvent()和 WaitWindowEvent()只能在主线程调用.
+WindowEventInsideCallback = WindowEvent() 和 WaitWindowEvent() 无法从 'binded' 事件回调中调用.
 
 [Window3D]
 BeforeAnyWindow = SetGUITheme3D() 必须要在任何其他 Window3D 命令之前调用。
